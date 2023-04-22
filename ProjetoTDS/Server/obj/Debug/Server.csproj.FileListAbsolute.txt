@@ -1,0 +1,26 @@
+c:\users\alex\source\repos\FichaPratica3\Server\bin\Debug\Server.exe.config
+c:\users\alex\source\repos\FichaPratica3\Server\bin\Debug\Server.exe
+c:\users\alex\source\repos\FichaPratica3\Server\bin\Debug\Server.pdb
+c:\users\alex\source\repos\FichaPratica3\Server\bin\Debug\ProtocolSI.dll
+c:\users\alex\source\repos\FichaPratica3\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+c:\users\alex\source\repos\FichaPratica3\Server\obj\Debug\Server.csproj.CopyComplete
+c:\users\alex\source\repos\FichaPratica3\Server\obj\Debug\Server.exe
+c:\users\alex\source\repos\FichaPratica3\Server\obj\Debug\Server.pdb
+c:\users\alex\source\repos\FichaPratica3\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\iolan\OneDrive\Área de Trabalho\FichaPratica3\Server\bin\Debug\Server.exe.config
+C:\Users\iolan\OneDrive\Área de Trabalho\FichaPratica3\Server\bin\Debug\Server.exe
+C:\Users\iolan\OneDrive\Área de Trabalho\FichaPratica3\Server\bin\Debug\Server.pdb
+C:\Users\iolan\OneDrive\Área de Trabalho\FichaPratica3\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\iolan\OneDrive\Área de Trabalho\FichaPratica3\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\iolan\OneDrive\Área de Trabalho\FichaPratica3\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\iolan\OneDrive\Área de Trabalho\FichaPratica3\Server\obj\Debug\Server.exe
+C:\Users\iolan\OneDrive\Área de Trabalho\FichaPratica3\Server\obj\Debug\Server.pdb
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Server\bin\Debug\Server.exe.config
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Server\bin\Debug\Server.exe
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Server\bin\Debug\Server.pdb
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Server\obj\Debug\Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Server\obj\Debug\Server.exe
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Server\obj\Debug\Server.pdb
