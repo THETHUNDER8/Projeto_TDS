@@ -85,6 +85,7 @@ namespace Client
         private void buttonSend_Click(object sender, EventArgs e)
         {
             string msg = textBoxMessage.Text;
+            textBoxMensagemEnviada.Text = msg;
             textBoxMessage.Clear();
             byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, msg);
             networkStream.Write(packet, 0, packet.Length);

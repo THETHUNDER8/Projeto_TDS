@@ -33,7 +33,7 @@
             this.buttonSend = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
             this.labelMensagemEnviada = new System.Windows.Forms.Label();
-            this.listBoxMensagemEnviada = new System.Windows.Forms.ListBox();
+            this.textBoxMensagemEnviada = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelMessage
@@ -83,20 +83,21 @@
             this.labelMensagemEnviada.TabIndex = 4;
             this.labelMensagemEnviada.Text = "Texto enviado para o servidor:";
             // 
-            // listBoxMensagemEnviada
+            // textBoxMensagemEnviada
             // 
-            this.listBoxMensagemEnviada.FormattingEnabled = true;
-            this.listBoxMensagemEnviada.Location = new System.Drawing.Point(87, 103);
-            this.listBoxMensagemEnviada.Name = "listBoxMensagemEnviada";
-            this.listBoxMensagemEnviada.Size = new System.Drawing.Size(287, 121);
-            this.listBoxMensagemEnviada.TabIndex = 5;
+            this.textBoxMensagemEnviada.Location = new System.Drawing.Point(87, 86);
+            this.textBoxMensagemEnviada.Multiline = true;
+            this.textBoxMensagemEnviada.Name = "textBoxMensagemEnviada";
+            this.textBoxMensagemEnviada.ReadOnly = true;
+            this.textBoxMensagemEnviada.Size = new System.Drawing.Size(287, 133);
+            this.textBoxMensagemEnviada.TabIndex = 5;
             // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 363);
-            this.Controls.Add(this.listBoxMensagemEnviada);
+            this.Controls.Add(this.textBoxMensagemEnviada);
             this.Controls.Add(this.labelMensagemEnviada);
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonSend);
@@ -117,7 +118,7 @@
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Label labelMensagemEnviada;
-        private System.Windows.Forms.ListBox listBoxMensagemEnviada;
+        private System.Windows.Forms.TextBox textBoxMensagemEnviada;
     }
 }
 

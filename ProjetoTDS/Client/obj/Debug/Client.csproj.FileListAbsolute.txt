@@ -33,3 +33,15 @@ C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\Proje
 C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Client\obj\Debug\Client.exe
 C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\Client\obj\Debug\Client.pdb
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\bin\Debug\Client.exe.config
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\bin\Debug\Client.exe
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\bin\Debug\Client.pdb
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.Client.resources
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.GenerateResource.cache
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.exe
+C:\Users\Hugo Gonçalves\Source\Repos\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.pdb
