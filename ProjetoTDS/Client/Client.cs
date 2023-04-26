@@ -120,5 +120,25 @@ namespace Client
         {
 
         }
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMensagemEnviada_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelMensagemEnviada_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelMessage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
