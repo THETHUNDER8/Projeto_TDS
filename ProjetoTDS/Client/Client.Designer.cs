@@ -35,14 +35,17 @@
             this.labelMensagemEnviada = new System.Windows.Forms.Label();
             this.textBoxMensagemEnviada = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelMessage
@@ -62,7 +65,7 @@
             // 
             this.textBoxMessage.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMessage.Location = new System.Drawing.Point(262, 434);
-            this.textBoxMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxMessage.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMessage.Multiline = true;
             this.textBoxMessage.Name = "textBoxMessage";
             this.textBoxMessage.Size = new System.Drawing.Size(518, 75);
@@ -74,7 +77,7 @@
             this.buttonSend.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSend.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonSend.Location = new System.Drawing.Point(775, 434);
-            this.buttonSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSend.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(85, 75);
             this.buttonSend.TabIndex = 2;
@@ -87,7 +90,7 @@
             this.buttonQuit.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonQuit.Location = new System.Drawing.Point(849, -3);
-            this.buttonQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonQuit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(83, 28);
             this.buttonQuit.TabIndex = 3;
@@ -112,7 +115,7 @@
             // 
             this.textBoxMensagemEnviada.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMensagemEnviada.Location = new System.Drawing.Point(262, 133);
-            this.textBoxMensagemEnviada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxMensagemEnviada.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMensagemEnviada.Multiline = true;
             this.textBoxMensagemEnviada.Name = "textBoxMensagemEnviada";
             this.textBoxMensagemEnviada.ReadOnly = true;
@@ -130,6 +133,16 @@
             this.panel1.Size = new System.Drawing.Size(192, 534);
             this.panel1.TabIndex = 6;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(56, 208);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 23);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Amigos";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(25)))), ((int)(((byte)(54)))));
@@ -140,6 +153,25 @@
             this.panel2.Size = new System.Drawing.Size(189, 189);
             this.panel2.TabIndex = 7;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Location = new System.Drawing.Point(27, 34);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(137, 112);
+            this.panel4.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(62, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 30);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "User";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkSlateBlue;
@@ -149,33 +181,16 @@
             this.panel3.Size = new System.Drawing.Size(932, 25);
             this.panel3.TabIndex = 8;
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 28);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "User";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel4.Location = new System.Drawing.Point(27, 34);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(137, 112);
-            this.panel4.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 208);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 23);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Amigos";
+            this.pictureBox1.Image = global::Client.Properties.Resources.Sample_User_Icon;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(131, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Client
             // 
@@ -193,7 +208,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.985075F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Client";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client";
@@ -203,7 +218,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,6 +240,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
