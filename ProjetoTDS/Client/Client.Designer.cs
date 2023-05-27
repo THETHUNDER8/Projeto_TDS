@@ -38,13 +38,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +87,7 @@
             // 
             this.buttonQuit.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonQuit.Location = new System.Drawing.Point(849, -3);
+            this.buttonQuit.Location = new System.Drawing.Point(44, 461);
             this.buttonQuit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(83, 28);
@@ -126,6 +124,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(25)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.buttonQuit);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, -4);
@@ -162,6 +161,17 @@
             this.panel4.Size = new System.Drawing.Size(137, 112);
             this.panel4.TabIndex = 9;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Client.Properties.Resources.Sample_User_Icon;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(131, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -172,33 +182,12 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "User";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.panel3.Controls.Add(this.buttonQuit);
-            this.panel3.Location = new System.Drawing.Point(0, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(932, 25);
-            this.panel3.TabIndex = 8;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Client.Properties.Resources.Sample_User_Icon;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(131, 120);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(931, 525);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxMensagemEnviada);
             this.Controls.Add(this.labelMensagemEnviada);
@@ -207,7 +196,7 @@
             this.Controls.Add(this.labelMessage);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.985075F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Client";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -219,7 +208,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,7 +224,6 @@
         private System.Windows.Forms.TextBox textBoxMensagemEnviada;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
