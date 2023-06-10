@@ -85,7 +85,8 @@ namespace Client
         private void buttonSend_Click(object sender, EventArgs e)
         {
             string msg = textBoxMessage.Text;
-            textBoxMensagemEnviada.Text = msg;
+            textBoxMensagemEnviada.Text += msg + Environment.NewLine;
+
             textBoxMessage.Clear();
             byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, msg);
             networkStream.Write(packet, 0, packet.Length);
@@ -137,6 +138,11 @@ namespace Client
         }
 
         private void labelMessage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
