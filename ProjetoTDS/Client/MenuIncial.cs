@@ -16,5 +16,14 @@ namespace Client
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Regista_te formRegista_te = new Regista_te();
+
+            formRegista_te.ShowDialog();
+            this.Close();
+
+        }
     }
 }

@@ -57,3 +57,6 @@ C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Clien
 C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.exe
 C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.pdb
+C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.IniciarSessao.resources
+C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.MenuIncial.resources
+C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.Regista_te.resources

@@ -34,6 +34,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.134328F);
             this.button1.Location = new System.Drawing.Point(305, 109);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 71);
@@ -43,17 +44,20 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Nirmala UI", 9.134328F);
             this.button2.Location = new System.Drawing.Point(305, 234);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(168, 71);
             this.button2.TabIndex = 1;
             this.button2.Text = "Registar Utilizador";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MenuIncial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
