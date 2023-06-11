@@ -16,5 +16,10 @@ namespace Client
         {
             InitializeComponent();
         }
+
+        private void IniciarSessao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

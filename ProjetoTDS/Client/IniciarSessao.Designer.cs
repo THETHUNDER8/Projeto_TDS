@@ -37,12 +37,14 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.134328F);
             this.button1.Location = new System.Drawing.Point(619, 329);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 58);
             this.button1.TabIndex = 9;
             this.button1.Text = "Regista-te";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // textBox2
             // 
@@ -63,18 +65,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(101, 175);
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.134328F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(65, 179);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 16);
+            this.label2.Size = new System.Drawing.Size(113, 23);
             this.label2.TabIndex = 6;
             this.label2.Text = "Palavra-passe";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(78, 75);
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 9.134328F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(51, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 16);
+            this.label1.Size = new System.Drawing.Size(157, 23);
             this.label1.TabIndex = 5;
             this.label1.Text = "Nome de utilizador";
             // 
@@ -82,6 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
@@ -90,6 +97,7 @@
             this.Controls.Add(this.label1);
             this.Name = "IniciarSessao";
             this.Text = "IniciarSessao";
+            this.Load += new System.EventHandler(this.IniciarSessao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
