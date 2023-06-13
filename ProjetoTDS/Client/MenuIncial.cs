@@ -107,15 +107,15 @@ namespace Client
                 conn.Open();
 
 
-                // Prepare SQL command to check if username already exists
+                // Prepara um comando SQL para verificar se o utilizador já existe
                 string checkSql = "SELECT COUNT(*) FROM Users WHERE Username = @username";
                 SqlCommand checkCmd = new SqlCommand(checkSql, conn);
                 checkCmd.Parameters.AddWithValue("@username", username);
 
-                // Execute the command and retrieve the count of matching usernames
+                // Executa o comando e retorna o count de usernames correspondentes
                 int count = (int)checkCmd.ExecuteScalar();
 
-                // If the count is greater than 0, it means the username already exists
+                // Se o count for maior que 0 significa que o username já existe
                 if (count > 0)
                 {
                     MessageBox.Show("Username already exists. Please choose a different username.");
@@ -194,16 +194,15 @@ namespace Client
 
             if (VerifyLogin(username, password))
             {
-                MessageBox.Show("Valid User");
+                MessageBox.Show("Utilizador válido!");
                 this.Hide();
                 Client Client = new Client();
                 Client.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Invalid User");
+                MessageBox.Show("Utilizador inválido!");
             }
-
         }
     }
 }

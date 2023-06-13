@@ -78,7 +78,7 @@ namespace Client
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
-            string message = textBoxMessage.Text;
+            string message   = textBoxMessage.Text;
             string encryptedMessage = EncryptText(message);
 
             textBoxMessage.Clear();
@@ -197,5 +197,13 @@ namespace Client
         {
 
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
     }
 }

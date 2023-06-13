@@ -54,7 +54,7 @@
             this.labelMessage.Location = new System.Drawing.Point(388, 401);
             this.labelMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(189, 17);
+            this.labelMessage.Size = new System.Drawing.Size(240, 23);
             this.labelMessage.TabIndex = 0;
             this.labelMessage.Text = "Texto a enviar para o servidor:";
             this.labelMessage.Click += new System.EventHandler(this.labelMessage_Click);
@@ -104,7 +104,7 @@
             this.labelMensagemEnviada.Location = new System.Drawing.Point(388, 92);
             this.labelMensagemEnviada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMensagemEnviada.Name = "labelMensagemEnviada";
-            this.labelMensagemEnviada.Size = new System.Drawing.Size(189, 17);
+            this.labelMensagemEnviada.Size = new System.Drawing.Size(240, 23);
             this.labelMensagemEnviada.TabIndex = 4;
             this.labelMensagemEnviada.Text = "Texto enviado para o servidor:";
             this.labelMensagemEnviada.Click += new System.EventHandler(this.labelMensagemEnviada_Click);
@@ -138,7 +138,7 @@
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(56, 208);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 17);
+            this.label2.Size = new System.Drawing.Size(71, 23);
             this.label2.TabIndex = 9;
             this.label2.Text = "Amigos";
             // 
@@ -178,13 +178,14 @@
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(62, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 20);
+            this.label1.Size = new System.Drawing.Size(56, 30);
             this.label1.TabIndex = 9;
             this.label1.Text = "User";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Client
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(931, 525);
