@@ -39,9 +39,10 @@
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(294, 230);
+            this.buttonLogin.Location = new System.Drawing.Point(392, 283);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogin.Size = new System.Drawing.Size(100, 28);
             this.buttonLogin.TabIndex = 36;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(203, 230);
+            this.buttonRegister.Location = new System.Drawing.Point(246, 283);
+            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(75, 23);
+            this.buttonRegister.Size = new System.Drawing.Size(100, 28);
             this.buttonRegister.TabIndex = 35;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = true;
@@ -62,34 +64,38 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(180, 86);
+            this.label3.Location = new System.Drawing.Point(240, 106);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 24);
+            this.label3.Size = new System.Drawing.Size(183, 31);
             this.label3.TabIndex = 34;
             this.label3.Text = "Login Window";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(184, 193);
+            this.textBoxPassword.Location = new System.Drawing.Point(245, 238);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(185, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(245, 22);
             this.textBoxPassword.TabIndex = 33;
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(184, 145);
+            this.textBoxUsername.Location = new System.Drawing.Point(245, 178);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(185, 20);
+            this.textBoxUsername.Size = new System.Drawing.Size(245, 22);
             this.textBoxUsername.TabIndex = 32;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(181, 177);
+            this.label2.Location = new System.Drawing.Point(241, 218);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 31;
             this.label2.Text = "Password";
             // 
@@ -97,18 +103,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(181, 129);
+            this.label1.Location = new System.Drawing.Point(241, 159);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 30;
             this.label1.Text = "Username";
             // 
             // MenuIncial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.label3);
@@ -116,7 +123,7 @@
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MenuIncial";
             this.Text = "MenuIncial";
             this.ResumeLayout(false);
