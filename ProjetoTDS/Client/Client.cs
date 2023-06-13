@@ -93,9 +93,10 @@ namespace Client
 
             using (MemoryStream ms = new MemoryStream())
             {
-                using (CryptoStream cs = new CryptoStream(ms, aes.CreateEncryptor(key, iv), CryptoStreamMode.Write))
+                using (CryptoStream cs = new CryptoStream(ms, aes.CreateEncryptor(key,iv), CryptoStreamMode.Write))
                 {
                     cs.Write(plainTextBytes, 0, plainTextBytes.Length);
+                    cs.Close();
                 }
                 encryptedBytes = ms.ToArray();
             }
@@ -111,9 +112,16 @@ namespace Client
 
             using (MemoryStream ms = new MemoryStream())
             {
-                using (CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(key, iv), CryptoStreamMode.Write))
+                using (CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read))
                 {
-                    cs.Write(encryptedBytes, 0, encryptedBytes.Length);
+                    cs.Read(encryptedBytes, 0, encryptedBytes.Length);//nao escreve na textbox mas nao da erro com 2 clientes abertos
+                    cs.Close();
+                    //escreve mas dá erro com dois clients abertos
+                    //using (MemoryStream decryptedMs = new MemoryStream())
+                    //{
+                    //    cs.CopyTo(decryptedMs);
+                    //    decryptedBytes = decryptedMs.ToArray();
+                    //}
                 }
                 decryptedBytes = ms.ToArray();
             }
