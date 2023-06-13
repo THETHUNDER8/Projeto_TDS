@@ -60,3 +60,18 @@ C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Clien
 C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.IniciarSessao.resources
 C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.MenuIncial.resources
 C:\Users\Cláudio\Documents\GitHub\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.Regista_te.resources
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\bin\Debug\Client.exe.config
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\bin\Debug\Client.exe
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\bin\Debug\Client.pdb
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.Client.resources
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.MenuIncial.resources
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.GenerateResource.cache
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.exe
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\obj\Debug\Client.pdb
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\bin\Debug\bd.mdf
+C:\Users\Hugo Gonçalves\Desktop\New folder\Projetos\topicos de segurança\ProjetoTDS\THETHUNDER8\Projeto_TDS\ProjetoTDS\Client\bin\Debug\bd_log.ldf

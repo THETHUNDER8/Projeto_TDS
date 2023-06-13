@@ -10,6 +10,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,10 +21,10 @@ namespace Client
         private const int PORT = 10000;
         private byte[] key;
         private byte[] iv;
-        NetworkStream networkStream;
-        ProtocolSI protocolSI;
-        TcpClient client;
-        AesCryptoServiceProvider aes;
+        private NetworkStream networkStream;
+        private ProtocolSI protocolSI;
+        private TcpClient client;
+        private AesCryptoServiceProvider aes;
 
         public Client()
         {
@@ -33,91 +34,133 @@ namespace Client
             client.Connect(endpoint);
             networkStream = client.GetStream();
             protocolSI = new ProtocolSI();
+
+            // Generate a random initialization vector (IV) and key
+            aes = new AesCryptoServiceProvider();
+            iv = aes.IV;
+            key = aes.Key;
+
+            Thread receiveThread = new Thread(ReceiveMessages);
+            receiveThread.Start();
         }
 
-        private string GerarChavePrivada(string pass)
+        private void ReceiveMessages()
         {
-            byte[] salt = new byte[] { 0, 1, 0, 8, 3, 9, 9, 7 };
+            try
+            {
+                while (true)
+                {
+                    int bytesRead = networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
 
-            Rfc2898DeriveBytes pwdGen = new Rfc2898DeriveBytes(pass, salt, 1000);
+                    switch (protocolSI.GetCmdType())
+                    {
+                        case ProtocolSICmdType.DATA:
+                            string encryptedMessage = protocolSI.GetStringFromData();
+                            string decryptedMessage = DecryptText(encryptedMessage);
+                            DisplayReceivedMessage(decryptedMessage);
+                            break;
 
-            byte[] key = pwdGen.GetBytes(16);
-            string keyB64 = Convert.ToBase64String(key);
-            return keyB64;
-        }
+                        case ProtocolSICmdType.ACK:
+                            Console.WriteLine("Message sent successfully");
+                            break;
 
-        private string GerarIV(string pass)
-        {
-            byte[] salt = new byte[] { 1, 9, 3, 4, 1, 0, 5, 8 };
-            Rfc2898DeriveBytes pwdGen = new Rfc2898DeriveBytes(pass, salt, 1000);
-
-            byte[] iv = pwdGen.GetBytes(16);
-            string iv64 = Convert.ToBase64String(iv);
-            return iv64;
-        }
-
-        private string CifrarTexto(string txt)
-        {
-            byte[] textoDecifrado = Encoding.UTF8.GetBytes(txt);
-            byte[] textoCifrado;
-            MemoryStream ms = new MemoryStream();
-            CryptoStream cs = new CryptoStream(ms, aes.CreateEncryptor(), CryptoStreamMode.Write);
-            cs.Write(textoDecifrado, 0, textoDecifrado.Length);
-            cs.Close();
-            textoCifrado = ms.ToArray();
-            string textoCifradoB64 = Convert.ToBase64String(textoCifrado);
-            return textoCifradoB64;
-        }
-
-        private string DefifrarTexto(string textoCifradoB64)
-        {
-            byte[] texoCifrado = Convert.FromBase64String(textoCifradoB64);
-            MemoryStream ms = new MemoryStream();
-            CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Read);
-            byte[] textoDecifrado = new byte[ms.Length];
-            int bytesLidos = 0;
-            bytesLidos = cs.Read(textoDecifrado, 0, textoDecifrado.Length);
-            cs.Close();
-            string txtDecifrado = Encoding.UTF8.GetString(textoDecifrado, 0, textoDecifrado.Length);
-            return txtDecifrado;
+                        case ProtocolSICmdType.EOT:
+                            Console.WriteLine("Disconnected from server");
+                            break;
+                    }
+                }
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine("Error receiving message: " + ex.Message);
+            }
         }
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
-            string msg = textBoxMessage.Text;
-            textBoxMensagemEnviada.Text += msg + Environment.NewLine;
+            string message = textBoxMessage.Text;
+            string encryptedMessage = EncryptText(message);
 
             textBoxMessage.Clear();
-            byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, msg);
+            byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, encryptedMessage);
             networkStream.Write(packet, 0, packet.Length);
-            while (protocolSI.GetCmdType() != ProtocolSICmdType.ACK)
+        }
+
+        private string EncryptText(string text)
+        {
+            byte[] plainTextBytes = Encoding.UTF8.GetBytes(text);
+            byte[] encryptedBytes;
+
+            using (MemoryStream ms = new MemoryStream())
             {
-                networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
+                using (CryptoStream cs = new CryptoStream(ms, aes.CreateEncryptor(key, iv), CryptoStreamMode.Write))
+                {
+                    cs.Write(plainTextBytes, 0, plainTextBytes.Length);
+                }
+                encryptedBytes = ms.ToArray();
+            }
+
+            string encryptedText = Convert.ToBase64String(encryptedBytes);
+            return encryptedText;
+        }
+
+        private string DecryptText(string encryptedText)
+        {
+            byte[] encryptedBytes = Convert.FromBase64String(encryptedText);
+            byte[] decryptedBytes;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(key, iv), CryptoStreamMode.Write))
+                {
+                    cs.Write(encryptedBytes, 0, encryptedBytes.Length);
+                }
+                decryptedBytes = ms.ToArray();
+            }
+
+            string decryptedText = Encoding.UTF8.GetString(decryptedBytes);
+            return decryptedText;
+        }
+
+        private void DisplayReceivedMessage(string message)
+        {
+            if (textBoxMensagemRecebida.InvokeRequired)
+            {
+                textBoxMensagemRecebida.Invoke(new MethodInvoker(delegate
+                {
+                    textBoxMensagemRecebida.Text += message + Environment.NewLine;
+                }));
+            }
+            else
+            {
+                textBoxMensagemRecebida.Text += message + Environment.NewLine;
             }
         }
-        
+
         private void CloseClient()
         {
             byte[] eot = protocolSI.Make(ProtocolSICmdType.EOT);
             networkStream.Write(eot, 0, eot.Length);
-            networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
             networkStream.Close();
             client.Close();
         }
-                        //Exit
+
+        // Exit
         private void buttonQuit_Click(object sender, EventArgs e)
         {
             CloseClient();
             this.Close();
         }
 
-
         private void Client_FormClosing(object sender, FormClosingEventArgs e)
         {
             CloseClient();
         }
+    
 
-        private void textBoxMessage_TextChanged(object sender, EventArgs e)
+
+
+    private void textBoxMessage_TextChanged(object sender, EventArgs e)
         {
 
         }

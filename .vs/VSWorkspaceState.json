@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ProjetoTDS",
+    "\\ProjetoTDS\\Client"
   ],
+  "SelectedNode": "\\ProjetoTDS\\Client\\Client.cs",
   "PreviewInSolutionExplorer": false
 }

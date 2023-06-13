@@ -33,7 +33,7 @@
             this.buttonSend = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
             this.labelMensagemEnviada = new System.Windows.Forms.Label();
-            this.textBoxMensagemEnviada = new System.Windows.Forms.TextBox();
+            this.textBoxMensagemRecebida = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,7 +54,7 @@
             this.labelMessage.Location = new System.Drawing.Point(388, 401);
             this.labelMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(240, 23);
+            this.labelMessage.Size = new System.Drawing.Size(189, 17);
             this.labelMessage.TabIndex = 0;
             this.labelMessage.Text = "Texto a enviar para o servidor:";
             this.labelMessage.Click += new System.EventHandler(this.labelMessage_Click);
@@ -104,22 +104,22 @@
             this.labelMensagemEnviada.Location = new System.Drawing.Point(388, 92);
             this.labelMensagemEnviada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMensagemEnviada.Name = "labelMensagemEnviada";
-            this.labelMensagemEnviada.Size = new System.Drawing.Size(240, 23);
+            this.labelMensagemEnviada.Size = new System.Drawing.Size(189, 17);
             this.labelMensagemEnviada.TabIndex = 4;
             this.labelMensagemEnviada.Text = "Texto enviado para o servidor:";
             this.labelMensagemEnviada.Click += new System.EventHandler(this.labelMensagemEnviada_Click);
             // 
-            // textBoxMensagemEnviada
+            // textBoxMensagemRecebida
             // 
-            this.textBoxMensagemEnviada.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMensagemEnviada.Location = new System.Drawing.Point(262, 133);
-            this.textBoxMensagemEnviada.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxMensagemEnviada.Multiline = true;
-            this.textBoxMensagemEnviada.Name = "textBoxMensagemEnviada";
-            this.textBoxMensagemEnviada.ReadOnly = true;
-            this.textBoxMensagemEnviada.Size = new System.Drawing.Size(598, 249);
-            this.textBoxMensagemEnviada.TabIndex = 5;
-            this.textBoxMensagemEnviada.TextChanged += new System.EventHandler(this.textBoxMensagemEnviada_TextChanged);
+            this.textBoxMensagemRecebida.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMensagemRecebida.Location = new System.Drawing.Point(262, 133);
+            this.textBoxMensagemRecebida.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxMensagemRecebida.Multiline = true;
+            this.textBoxMensagemRecebida.Name = "textBoxMensagemRecebida";
+            this.textBoxMensagemRecebida.ReadOnly = true;
+            this.textBoxMensagemRecebida.Size = new System.Drawing.Size(598, 249);
+            this.textBoxMensagemRecebida.TabIndex = 5;
+            this.textBoxMensagemRecebida.TextChanged += new System.EventHandler(this.textBoxMensagemEnviada_TextChanged);
             // 
             // panel1
             // 
@@ -138,7 +138,7 @@
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(56, 208);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 23);
+            this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Amigos";
             // 
@@ -178,18 +178,18 @@
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(62, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 30);
+            this.label1.Size = new System.Drawing.Size(41, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "User";
             // 
             // Client
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(931, 525);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBoxMensagemEnviada);
+            this.Controls.Add(this.textBoxMensagemRecebida);
             this.Controls.Add(this.labelMensagemEnviada);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.textBoxMessage);
@@ -221,7 +221,7 @@
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Label labelMensagemEnviada;
-        private System.Windows.Forms.TextBox textBoxMensagemEnviada;
+        private System.Windows.Forms.TextBox textBoxMensagemRecebida;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;

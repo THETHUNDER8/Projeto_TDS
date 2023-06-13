@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -31,7 +32,10 @@ namespace Client
                 // Configurar ligação à Base de Dados
                 conn = new SqlConnection();
 
-                conn.ConnectionString = String.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='/path/to/Database.mdf';Integrated Security=True");
+                string appPath = Path.GetDirectoryName(Application.ExecutablePath);
+                string AttachDBFile = appPath + "\\bd.mdf";
+
+                conn.ConnectionString = String.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0};Integrated Security=True", AttachDBFile);
 
                 // Abrir ligação à Base de Dados
                 conn.Open();
@@ -94,15 +98,36 @@ namespace Client
                 // Configurar ligação à Base de Dados
                 conn = new SqlConnection();
 
-                conn.ConnectionString = String.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='/path/to/Database.mdf';Integrated Security=True");
+                string appPath = Path.GetDirectoryName(Application.ExecutablePath);
+                string AttachDBFile = appPath + "\\bd.mdf";
+
+                conn.ConnectionString = String.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0};Integrated Security=True", AttachDBFile);
 
                 // Abrir ligação à Base de Dados
                 conn.Open();
+
+
+                // Prepare SQL command to check if username already exists
+                string checkSql = "SELECT COUNT(*) FROM Users WHERE Username = @username";
+                SqlCommand checkCmd = new SqlCommand(checkSql, conn);
+                checkCmd.Parameters.AddWithValue("@username", username);
+
+                // Execute the command and retrieve the count of matching usernames
+                int count = (int)checkCmd.ExecuteScalar();
+
+                // If the count is greater than 0, it means the username already exists
+                if (count > 0)
+                {
+                    MessageBox.Show("Username already exists. Please choose a different username.");
+                    return;
+                }
+
 
                 // Declaração dos parâmetros do comando SQL
                 SqlParameter paramUsername = new SqlParameter("@username", username);
                 SqlParameter paramPassHash = new SqlParameter("@saltedPasswordHash", saltedPasswordHash);
                 SqlParameter paramSalt = new SqlParameter("@salt", salt);
+
 
                 // Declaração do comando SQL
                 String sql = "INSERT INTO Users (Username, SaltedPasswordHash, Salt) VALUES (@username,@saltedPasswordHash,@salt)";
@@ -125,6 +150,7 @@ namespace Client
                     // Se forem devolvidas 0 linhas alteradas então o não foi executado com sucesso
                     throw new Exception("Error while inserting an user");
                 }
+
                 MessageBox.Show("Registado com sucesso!");
             }
             catch (Exception e)
@@ -169,7 +195,7 @@ namespace Client
             if (VerifyLogin(username, password))
             {
                 MessageBox.Show("Valid User");
-                this.Close();
+                this.Hide();
                 Client Client = new Client();
                 Client.ShowDialog();
             }
@@ -179,6 +205,5 @@ namespace Client
             }
 
         }
-
     }
 }
