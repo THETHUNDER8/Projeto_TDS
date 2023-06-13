@@ -32,12 +32,12 @@ namespace Server
                 clientCounter++;
                 Console.WriteLine("Client {0} connected", clientCounter);
                 ClientHandler clientHandler = new ClientHandler(client, clientCounter);
-                clients.Add(clientHandler); // Add the client handler to the list
+                clients.Add(clientHandler); // Adiciona o client handler á lista
                 clientHandler.Handle();
             }
         }
 
-        // method to send a message to all clients
+        // Método para enviar mensagem a todos os clientes
         public static void BroadcastMessage(string message)
         {
             foreach (var client in clients)
@@ -82,7 +82,7 @@ namespace Server
                         case ProtocolSICmdType.DATA:
                             string message = protocolSIThreadLocal.Value.GetStringFromData();
                             Console.WriteLine("Client {0}: {1}", clientID, message);
-                            // send the message to all clients
+                            // Envia mensagem a todos os clientes
                             Server.BroadcastMessage(message);
                             break;
 
@@ -96,7 +96,7 @@ namespace Server
             }
             catch (IOException ex)
             {
-                // if the client disconnects
+                // Se o Cliente desconetar
                 Console.WriteLine("Error handling client {0}: {1}", clientID, ex.Message);
             }
             finally
@@ -106,15 +106,15 @@ namespace Server
             }
         }
 
-        // method to send a message
+        // Método para envia mensagem
         public void SendMessage(string message)
         {
-            lock (networkStream) // Synchronize access to the network stream
+            lock (networkStream) // Sincroniza o acesso á rede
             {
-                // Create the protocolSI data packet
+                // Cria um protocolSI data packet
                 byte[] data = protocolSIThreadLocal.Value.Make(ProtocolSICmdType.DATA, message);
 
-                // Send the data packet over the network
+                // Envia o data packet para a rede
                 networkStream.Write(data, 0, data.Length);
             }
         }

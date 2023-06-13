@@ -35,7 +35,7 @@ namespace Client
             networkStream = client.GetStream();
             protocolSI = new ProtocolSI();
 
-            // Generate a random initialization vector (IV) and key
+            // Gera um random initialization vector (IV) e  key
             aes = new AesCryptoServiceProvider();
             iv = aes.IV;
             key = aes.Key;
@@ -51,7 +51,6 @@ namespace Client
                 while (true)
                 {
                     int bytesRead = networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
-
                     switch (protocolSI.GetCmdType())
                     {
                         case ProtocolSICmdType.DATA:
@@ -84,7 +83,8 @@ namespace Client
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
-            string message   = textBoxMessage.Text;
+            string message   = textBoxMessage.Text;         //Atualiza a mensagem para o texto da textbox
+
             string encryptedMessage = EncryptText(message);
 
             textBoxMessage.Clear();
@@ -92,7 +92,7 @@ namespace Client
             networkStream.Write(packet, 0, packet.Length);
         }
 
-        //encripta mensagem enviada
+        //Encripta mensagem enviada
         private string EncryptText(string text)
         {
             byte[] plainTextBytes = Encoding.UTF8.GetBytes(text);
@@ -112,7 +112,7 @@ namespace Client
             return encryptedText;
         }
 
-        //desncripta mensagem recebida
+        //Desencripta mensagem recebida
         private string DecryptText(string encryptedText)
         {
             byte[] encryptedBytes = Convert.FromBase64String(encryptedText);
@@ -123,7 +123,7 @@ namespace Client
                 using (CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read))
                 {
                     byte[] buffer = new byte[encryptedBytes.Length];
-                    int bytesRead = cs.Read(buffer, 0, buffer.Length);//erro Padding is invalid and cannot be removed.' quando estao 2 clientes abertos
+                    int bytesRead = cs.Read(buffer, 0, buffer.Length);//erro "Padding is invalid and cannot be removed." quando estão 2 ou mais clientes abertos
                     decryptedBytes = new byte[bytesRead];
                     Array.Copy(buffer, decryptedBytes, bytesRead);
                 }
@@ -153,8 +153,6 @@ namespace Client
             CloseClient();
         }
     
-
-
 
     private void textBoxMessage_TextChanged(object sender, EventArgs e)
         {
@@ -189,9 +187,5 @@ namespace Client
         {
 
         }
-
-
-
-
     }
 }
