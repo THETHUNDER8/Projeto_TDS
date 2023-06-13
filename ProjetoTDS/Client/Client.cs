@@ -90,12 +90,49 @@ namespace Client
             textBoxMessage.Clear();
             byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, msg);
             networkStream.Write(packet, 0, packet.Length);
+<<<<<<< Updated upstream
             while (protocolSI.GetCmdType() != ProtocolSICmdType.ACK)
+=======
+        }
+
+        //Encripta a mensagem enviada
+        private string EncryptText(string text)
+        {
+            byte[] plainTextBytes = Encoding.UTF8.GetBytes(text);
+            byte[] encryptedBytes;
+
+            using (MemoryStream ms = new MemoryStream())
+>>>>>>> Stashed changes
             {
                 networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
             }
         }
+<<<<<<< Updated upstream
         
+=======
+
+        //Desencripta a mensagem recebida
+        private string DecryptText(string encryptedText)
+        {
+            byte[] encryptedBytes = Convert.FromBase64String(encryptedText);
+            byte[] decryptedBytes;
+
+            using (MemoryStream ms = new MemoryStream(encryptedBytes))
+            {
+                using (CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read))
+                {
+                    byte[] buffer = new byte[encryptedBytes.Length];
+                    int bytesRead = cs.Read(buffer, 0, buffer.Length);//erro Padding is invalid and cannot be removed.' quando estao 2 clientes abertos
+                    decryptedBytes = new byte[bytesRead];
+                    Array.Copy(buffer, decryptedBytes, bytesRead);
+                }
+            }
+
+            string decryptedText = Encoding.UTF8.GetString(decryptedBytes);
+            return decryptedText;
+        }
+
+>>>>>>> Stashed changes
         private void CloseClient()
         {
             byte[] eot = protocolSI.Make(ProtocolSICmdType.EOT);
