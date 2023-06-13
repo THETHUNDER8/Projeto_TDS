@@ -82,12 +82,8 @@ namespace Server
                         case ProtocolSICmdType.DATA:
                             string message = protocolSIThreadLocal.Value.GetStringFromData();
                             Console.WriteLine("Client {0}: {1}", clientID, message);
-
                             // send the message to all clients
                             Server.BroadcastMessage(message);
-
-                            ack = protocolSIThreadLocal.Value.Make(ProtocolSICmdType.ACK);
-                            networkStream.Write(ack, 0, ack.Length);
                             break;
 
                         case ProtocolSICmdType.EOT:
@@ -115,11 +111,8 @@ namespace Server
         {
             lock (networkStream) // Synchronize access to the network stream
             {
-                // Convert the message to bytes
-                byte[] messageBytes = Encoding.UTF8.GetBytes(message);
-
                 // Create the protocolSI data packet
-                byte[] data = protocolSIThreadLocal.Value.Make(ProtocolSICmdType.DATA, messageBytes);
+                byte[] data = protocolSIThreadLocal.Value.Make(ProtocolSICmdType.DATA, message);
 
                 // Send the data packet over the network
                 networkStream.Write(data, 0, data.Length);

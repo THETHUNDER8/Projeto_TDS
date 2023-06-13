@@ -57,7 +57,12 @@ namespace Client
                         case ProtocolSICmdType.DATA:
                             string encryptedMessage = protocolSI.GetStringFromData();
                             string decryptedMessage = DecryptText(encryptedMessage);
-                            DisplayReceivedMessage(decryptedMessage);
+
+                            // Use Invoke to marshal the UI update code to the UI thread
+                            textBoxMensagemRecebida.Invoke((MethodInvoker)(() =>
+                            {
+                                textBoxMensagemRecebida.Text += decryptedMessage + Environment.NewLine;
+                            }));
                             break;
 
                         case ProtocolSICmdType.ACK:
@@ -76,6 +81,7 @@ namespace Client
             }
         }
 
+
         private void buttonSend_Click(object sender, EventArgs e)
         {
             string message   = textBoxMessage.Text;
@@ -86,6 +92,7 @@ namespace Client
             networkStream.Write(packet, 0, packet.Length);
         }
 
+        //encripta mensagem enviada
         private string EncryptText(string text)
         {
             byte[] plainTextBytes = Encoding.UTF8.GetBytes(text);
@@ -105,44 +112,25 @@ namespace Client
             return encryptedText;
         }
 
+        //desncripta mensagem recebida
         private string DecryptText(string encryptedText)
         {
             byte[] encryptedBytes = Convert.FromBase64String(encryptedText);
             byte[] decryptedBytes;
 
-            using (MemoryStream ms = new MemoryStream())
+            using (MemoryStream ms = new MemoryStream(encryptedBytes))
             {
                 using (CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read))
                 {
-                    cs.Read(encryptedBytes, 0, encryptedBytes.Length);//nao escreve na textbox mas nao da erro com 2 clientes abertos
-                    cs.Close();
-                    //escreve mas dá erro com dois clients abertos
-                    //using (MemoryStream decryptedMs = new MemoryStream())
-                    //{
-                    //    cs.CopyTo(decryptedMs);
-                    //    decryptedBytes = decryptedMs.ToArray();
-                    //}
+                    byte[] buffer = new byte[encryptedBytes.Length];
+                    int bytesRead = cs.Read(buffer, 0, buffer.Length);//erro Padding is invalid and cannot be removed.' quando estao 2 clientes abertos
+                    decryptedBytes = new byte[bytesRead];
+                    Array.Copy(buffer, decryptedBytes, bytesRead);
                 }
-                decryptedBytes = ms.ToArray();
             }
 
             string decryptedText = Encoding.UTF8.GetString(decryptedBytes);
             return decryptedText;
-        }
-
-        private void DisplayReceivedMessage(string message)
-        {
-            if (textBoxMensagemRecebida.InvokeRequired)
-            {
-                textBoxMensagemRecebida.Invoke(new MethodInvoker(delegate
-                {
-                    textBoxMensagemRecebida.Text += message + Environment.NewLine;
-                }));
-            }
-            else
-            {
-                textBoxMensagemRecebida.Text += message + Environment.NewLine;
-            }
         }
 
         private void CloseClient()
