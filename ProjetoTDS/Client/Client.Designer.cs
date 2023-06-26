@@ -116,6 +116,7 @@
             this.textBoxMensagemRecebida.Multiline = true;
             this.textBoxMensagemRecebida.Name = "textBoxMensagemRecebida";
             this.textBoxMensagemRecebida.ReadOnly = true;
+            this.textBoxMensagemRecebida.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxMensagemRecebida.Size = new System.Drawing.Size(598, 249);
             this.textBoxMensagemRecebida.TabIndex = 5;
             this.textBoxMensagemRecebida.TextChanged += new System.EventHandler(this.textBoxMensagemEnviada_TextChanged);
